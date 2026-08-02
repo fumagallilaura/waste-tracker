@@ -17,6 +17,7 @@ Os Architecture Decision Records documentam escolhas técnicas cruciais feitas a
 * [ADR 0003: Adoção de Arquitetura Hexagonal (Ports and Adapters)](./adr/0003-backend-architecture-pattern.md) 
 * [ADR 0004: Adoção da Abordagem Mobile-First no Design e Desenvolvimento](./adr/0004-mobile-first-strategy.md)
 * [ADR 0005: Padronização de Layout, Suporte Nativo a Dark Mode e Extensão de Estilos](./adr/0005-layout-dark-mode-and-styling-guidelines.md)
+* [ADR 0006: Adoção do PostgreSQL como Banco de Dados Relacional Principal](./adr/0006-postgresql-database.md)
 
 ---
 
@@ -30,9 +31,9 @@ Documentação formal dos contratos, esquemas de dados e endpoints disponibiliza
 ## 📊 Modelagem de Dados
 Documentação estrutural do banco de dados, diagramas de entidade-relacionamento (DER) e dicionário de dados das entidades do sistema.
 
-* [0001 - Modelagem Geral do Banco de Dados (PostgreSQL)](./database/0001-data-modeling.md)
-* [0002 - Dicionário de Dados: Insumos e Desperdícios](./database/0002-data-dictionary.md)
-* [0003 - Modelagem do Banco de Dados (DER)](./database/0003-schema-model)
+* [0001: Modelagem Geral do Banco de Dados (PostgreSQL)](./database/0001-data-modeling.md)
+* [0002: Dicionário de Dados: Insumos e Desperdícios](./database/0002-data-dictionary.md)
+* [0003: Modelagem do Banco de Dados (DER)](./database/0003-schema-model)
 
 ---
 
