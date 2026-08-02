@@ -1,9 +1,9 @@
-# Kitchen Waste Tracker
+# Waste Tracker
 
-Sistema inteligente de gestão de desperdício e custos para cozinhas de hotéis e eventos, focado na otimização de insumos, sustentabilidade operacional e controle financeiro.
+Sistema inteligente de gestão de desperdício e custos, focado na otimização de insumos, sustentabilidade operacional e controle financeiro.
 
 ## 🚀 Sobre o Projeto
-O **Kitchen Waste Tracker** tem como objetivo auxiliar gestores de hospedagem e eventos a monitorarem o desperdício de recursos (água, energia, alimentos e resíduos), oferecendo dashboards analíticos, indicadores de sustentabilidade e um módulo robusto de controle de gastos.
+O **Waste Tracker** tem como objetivo auxiliar gestores de hospedagem e eventos a monitorarem o desperdício de recursos (água, energia, alimentos e resíduos), oferecendo dashboards analíticos, indicadores de sustentabilidade e um módulo robusto de controle de gastos.
 
 ## 🛠️ Tech Stack & Arquitetura
 O front-end da aplicação foi estruturado para garantir escalabilidade, performance e consistência visual baseada na identidade eco-corporativa do projeto.
@@ -17,6 +17,26 @@ Para mais detalhes sobre as diretrizes técnicas e escolhas estruturais, consult
 
 ## 📁 Estrutura de Documentação
 * `docs/adr/` — Architecture Decision Records (Registros de Decisão Arquitetural).
+* `docs/conventional-commits.md` — Guia de padronização de commits.
 
 ## 📋 Pré-requisitos e Instalação
-*(Em breve: instruções de configuração do ambiente de desenvolvimento).*
+
+Certifique-se de ter o [Node.js](https://nodejs.org/) instalado em sua máquina.
+
+1. Clone o repositório:
+   ```bash
+   git clone <url-do-repositorio>
+   cd kitchen-waste-tracker
+   ```
+
+2. Instale as dependências:
+    ```bash
+    npm install
+    ```
+
+3. Execute o ambiente de desenvolvimento:
+    ```bash
+    npm run dev
+    ```
+
+4. Acesse http://localhost:3000 no seu navegador.

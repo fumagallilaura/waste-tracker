@@ -5,7 +5,7 @@
 * **Decisor:** Laura Fumagalli
 
 ## Contexto
-Precisamos iniciar o desenvolvimento do front-end do **Kitchen Waste Tracker**, um sistema de gestão de desperdício e custos voltado para cozinhas de hotéis e eventos. A interface inicial deve suportar dashboards gerenciais complexos, tabelas de controle de insumos, formulários de lançamento de gastos e forte aderência a uma identidade visual própria baseada em uma paleta eco-corporativa (composta por tons de verde-esmeralda, azul-marinho, branco puro e cinza claro).
+Precisamos iniciar o desenvolvimento do front-end do **Waste Tracker**, um sistema de gestão de desperdício e custos voltado para cozinhas de hotéis e eventos. A interface inicial deve suportar dashboards gerenciais complexos, tabelas de controle de insumos, formulários de lançamento de gastos e forte aderência a uma identidade visual própria baseada em uma paleta eco-corporativa (composta por tons de verde-esmeralda, azul-marinho, branco puro e cinza claro).
 
 Precisávamos definir o framework base, a metodologia de estruturação de componentes UI, a estratégia de estilização e o gerenciamento de estado para garantir escalabilidade desde a primeira feature de gestão de gastos.
 
