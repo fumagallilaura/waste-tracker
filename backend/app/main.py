@@ -13,3 +13,7 @@ def health_check():
         "service": "kitchen-waste-tracker-backend",
         "architecture": "hexagonal"
     }
+
+@app.get("/")
+def read_root():
+    return {"message": "Waste Tracker API is running! Check /docs for documentation."}
