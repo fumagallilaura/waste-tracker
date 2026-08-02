@@ -9,7 +9,7 @@ Os Architecture Decision Records documentam escolhas técnicas cruciais feitas a
 
 * [ADR 001: Arquitetura Frontend com Next.js e Atomic Design](./adr/0001-frontend-architecture-nextjs-atomic-design.md)
 * [ADR 002: Adoção de Arquitetura RESTful e Contratos de API](./adr/0002-api-restful-contracts.md) 
-* [ADR 0003: Adoção de Arquitetura Hexagonal (Ports and Adapters)](./adr/0003-backend-architecture-pattern) 
+* [ADR 0003: Adoção de Arquitetura Hexagonal (Ports and Adapters)](./adr/0003-backend-architecture-pattern.md) 
 
 ---
 
