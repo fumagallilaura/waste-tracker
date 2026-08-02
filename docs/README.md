@@ -35,6 +35,7 @@ Documentação estrutural do banco de dados, diagramas de entidade-relacionament
 * [0001: Modelagem Geral do Banco de Dados (PostgreSQL)](./database/0001-data-modeling.md)
 * [0002: Dicionário de Dados: Insumos e Desperdícios](./database/0002-data-dictionary.md)
 * [0003: Modelagem do Banco de Dados (DER)](./database/0003-schema-model)
+* [0004: Como Criar e Migrar Tabelas com SQLAlchemy e Alembic](./database/0004-tables-creation.md)
 
 ---
 

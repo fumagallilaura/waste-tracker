@@ -68,6 +68,8 @@ python -m uvicorn app.main:app --reload --port 8000
 
 - Acesse a documentação interativa da API (Swagger) em http://localhost:8000/docs.
 
+> Observação: é importante ter um banco de dados rodando. Pode usar o docker se quiser com o comando `docker compose up db -d`. Caso contrario, pode colocar uma connection string na variável de ambiente `DATABASE_URL`
+
 ---
 
 ## Como Rodar com Docker
