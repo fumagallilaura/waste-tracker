@@ -9,6 +9,7 @@ Sistema inteligente de gestão de desperdício e custos, focado na otimização 
 - [Como Rodar Localmente](#como-rodar-localmente)
 - [Como Rodar com Docker](#como-rodar-com-docker)
 - [Documentação](#documentação)
+- [Troubleshooting](#troubleshooting)
 
 ---
 
@@ -102,3 +103,17 @@ docker compose down
 Todo o detalhamento técnico, registros de decisão e padrões do projeto estão centralizados na pasta [docs/](./docs). 
 
 Acesse o [Índice da Documentação](./docs/README.md) para navegar por todos os guias e ADRs.
+
+---
+
+## Troubleshooting (Resolução de Problemas)
+
+### 1. Erro quando fizer alterações no Docker
+
+- Causa: A pasta gerada localmente no host possui binários incompatíveis com o ambiente Linux do container.
+
+- Solução: Certifique-se de fazer as modificações necessárias e rode:
+
+```bash
+docker compose build --no-cache && docker compose up
+```
