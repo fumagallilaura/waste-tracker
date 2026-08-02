@@ -1,12 +1,19 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { MobileNav } from "@/components/organisms/MobileNav";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Kitchen Waste Tracker",
   description: "Sistema inteligente de gestão de desperdício e custos",
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
 };
 
 export default function RootLayout({
@@ -16,8 +23,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
-      <body className={`${inter.className} antialiased transition-colors duration-300`}>
-        {children}
+      <body className={`${inter.className} antialiased pb-20 md:pb-0 transition-colors duration-300`}>
+        <div className="min-h-screen flex flex-col">
+          <main className="flex-1 w-full max-w-7xl mx-auto px-4 py-6">
+            {children}
+          </main>
+        </div>
+        <MobileNav />
       </body>
     </html>
   );
