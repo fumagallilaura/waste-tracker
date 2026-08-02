@@ -18,6 +18,7 @@ Os Architecture Decision Records documentam escolhas técnicas cruciais feitas a
 * [ADR 0004: Adoção da Abordagem Mobile-First no Design e Desenvolvimento](./adr/0004-mobile-first-strategy.md)
 * [ADR 0005: Padronização de Layout, Suporte Nativo a Dark Mode e Extensão de Estilos](./adr/0005-layout-dark-mode-and-styling-guidelines.md)
 * [ADR 0006: Adoção do PostgreSQL como Banco de Dados Relacional Principal](./adr/0006-postgresql-database.md)
+* [ADR 0007: Hierarquia Flexível de Categorias com Autorreferência (Self-Referencing)](./adr/0007-hierarchical-categories-self-referencing.md)
 
 ---
 
