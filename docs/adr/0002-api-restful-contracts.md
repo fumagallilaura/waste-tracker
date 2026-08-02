@@ -1,7 +1,5 @@
 # ADR 0002: Adoção de Arquitetura RESTful e Contratos de API
 
-## Status
-
 * **Status:** Aceito
 * **Data:** 2026-08-02
 * **Decisor:** Laura Fumagalli

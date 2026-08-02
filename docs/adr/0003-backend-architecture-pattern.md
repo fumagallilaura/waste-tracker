@@ -1,7 +1,5 @@
 # ADR 0003: Adoção de Arquitetura Hexagonal (Ports and Adapters)
 
-## Status
-
 * **Status:** Aceito
 * **Data:** 2026-08-02
 * **Decisor:** Laura Fumagalli
