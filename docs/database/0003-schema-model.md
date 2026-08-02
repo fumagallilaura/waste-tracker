@@ -1,4 +1,4 @@
-# Modelagem do Banco de Dados (DER) - Kitchen Waste Tracker
+# 0003 - Modelagem do Banco de Dados (DER) - Waste Tracker
 
 ## 1. Visão Geral das Entidades
 

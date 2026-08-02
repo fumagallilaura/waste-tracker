@@ -27,6 +27,15 @@ Documentação formal dos contratos, esquemas de dados e endpoints disponibiliza
 
 ---
 
+## 📊 Modelagem de Dados
+Documentação estrutural do banco de dados, diagramas de entidade-relacionamento (DER) e dicionário de dados das entidades do sistema.
+
+* [0001 - Modelagem Geral do Banco de Dados (PostgreSQL)](./database/0001-data-modeling.md)
+* [0002 - Dicionário de Dados: Insumos e Desperdícios](./database/0002-data-dictionary.md)
+* [0003 - Modelagem do Banco de Dados (DER)](./database/0003-schema-model)
+
+---
+
 ## 📜 Padrões e Guias de Desenvolvimento
 * [Guia de Conventional Commits](./conventional-commits.md) — Padrão de padronização de mensagens de commit adotado no repositório.
 
