@@ -1,3 +1,4 @@
+from datetime import date, datetime, timezone
 from typing import List, Optional
 from fastapi import APIRouter, Depends, HTTPException, status
 from pydantic import BaseModel, ConfigDict
@@ -13,6 +14,7 @@ class ExpenseCreate(BaseModel):
     description: str
     amount: float
     category_id: Optional[str] = None
+    date: Optional[date] = None 
 
 class ExpenseResponse(BaseModel):
     model_config = ConfigDict(from_attributes=True)
@@ -20,6 +22,7 @@ class ExpenseResponse(BaseModel):
     description: str
     amount: float
     category_id: Optional[str] = None
+    created_z: datetime
 
 def get_expense_use_case(db: Session = Depends(get_db)) -> ExpenseUseCase:
     repo = ExpenseRepository(db)
@@ -27,11 +30,24 @@ def get_expense_use_case(db: Session = Depends(get_db)) -> ExpenseUseCase:
 
 @router.post("/", response_model=ExpenseResponse, status_code=status.HTTP_201_CREATED)
 def create_expense(payload: ExpenseCreate, use_case: ExpenseUseCase = Depends(get_expense_use_case)):
-    return use_case.create_expense(
+    # Converte a data enviada (YYYY-MM-DD) para datetime com UTC, ou usa o momento atual
+    custom_date = None
+    if payload.date:
+        custom_date = datetime(payload.date.year, payload.date.month, payload.date.day, tzinfo=timezone.utc)
+    
+    repo = use_case.repository
+    from app.core.domain.expense import Expense
+    import uuid
+    
+    expense_id = str(uuid.uuid4())
+    expense = Expense(
+        id=expense_id,
         description=payload.description,
         amount=payload.amount,
-        category_id=payload.category_id
+        category_id=payload.category_id,
+        created_z=custom_date
     )
+    return repo.save(expense)
 
 @router.get("/", response_model=List[ExpenseResponse])
 def list_expenses(use_case: ExpenseUseCase = Depends(get_expense_use_case)):
