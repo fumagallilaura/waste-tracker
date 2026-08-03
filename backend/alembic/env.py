@@ -34,6 +34,7 @@ if config.config_file_name is not None:
 # 1. Importe o Base do local correto do seu projeto
 from app.adapters.outbound.database.base import Base
 from app.adapters.outbound.database.model.category_model import CategoryModel
+from app.adapters.outbound.database.model.expense_model import ExpenseModel
 
 target_metadata = Base.metadata
 
