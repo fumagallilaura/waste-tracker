@@ -224,7 +224,7 @@ export default function Home() {
               onClick={() => setTransactionType("income")}
               className={`flex-1 py-2 px-3 rounded-xl text-xs font-semibold flex items-center justify-center gap-2 border transition-all cursor-pointer ${
                 transactionType === "income"
-                  ? "bg-blue-500/10 border-blue-500 text-blue-400"
+                  ? "bg-[var(--accent-emerald)]/10 border-[var(--accent-emerald)] text-[var(--accent-emerald)]"
                   : "border-[var(--border-color)] text-[var(--text-muted)] bg-[var(--bg-primary)]"
               }`}
             >
@@ -267,7 +267,9 @@ export default function Home() {
 
           <button
             type="submit"
-            className="w-full py-3 px-4 bg-[var(--accent-emerald)] text-white font-medium rounded-xl flex items-center justify-center gap-2 shadow-md hover:opacity-95 active:scale-[0.98] transition-all cursor-pointer"
+            className={`w-full py-3 px-4 text-white font-medium rounded-xl flex items-center justify-center gap-2 shadow-md hover:opacity-95 active:scale-[0.98] transition-all cursor-pointer ${
+              transactionType === "income" ? "bg-[var(--accent-emerald)]" : "bg-red-500"
+            }`}
           >
             <PlusCircle size={20} />
             {transactionType === "expense" ? "Registrar Gasto" : "Registrar Ganho"}
