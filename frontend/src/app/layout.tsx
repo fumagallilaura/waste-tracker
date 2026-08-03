@@ -23,7 +23,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
-      <body className={`${inter.className} antialiased pb-20 md:pb-0 transition-colors duration-300`}>
+      <body className={`${inter.className} antialiased pb-20 md:pb-6 md:pt-16 transition-colors duration-300`}>
         <div className="min-h-screen flex flex-col">
           <main className="flex-1 w-full max-w-7xl mx-auto px-4 py-6">
             {children}

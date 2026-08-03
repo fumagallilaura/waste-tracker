@@ -12,6 +12,9 @@ export function useTheme() {
     if (storedTheme === "dark" || (!storedTheme && prefersDark)) {
       setIsDark(true);
       document.documentElement.classList.add("dark");
+    } else {
+      setIsDark(false);
+      document.documentElement.classList.remove("dark");
     }
   }, []);
 
