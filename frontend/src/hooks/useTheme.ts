@@ -9,11 +9,12 @@ export function useTheme() {
     const storedTheme = localStorage.getItem("theme");
     const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
     
-    if (storedTheme === "dark" || (!storedTheme && prefersDark)) {
-      setIsDark(true);
+    const shouldUseDark = storedTheme === "dark" || (!storedTheme && prefersDark);
+    
+    setIsDark(shouldUseDark);
+    if (shouldUseDark) {
       document.documentElement.classList.add("dark");
     } else {
-      setIsDark(false);
       document.documentElement.classList.remove("dark");
     }
   }, []);
