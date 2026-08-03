@@ -1,5 +1,3 @@
-version: '3.8'
-
 services:
   db:
     image: postgres:17-alpine
@@ -12,6 +10,32 @@ services:
       - "5432:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
+    networks:
+      - waste-network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d waste_tracker"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+  
+  sonarqube:
+    image: sonarqube:community
+    container_name: waste_tracker_sonarqube
+    ports:
+      - "9000:9000"
+    environment:
+      - SONAR_JDBC_USERNAME=postgres
+      - SONAR_JDBC_PASSWORD=postgres
+      - SONAR_JDBC_URL=jdbc:postgresql://db:5432/waste_tracker
+      - SONAR_INITIAL_ADMIN_PASSWORD=S&nh@!123456
+      - SONAR_UPDATE_FIRST_LOGIN=false
+    volumes:
+      - sonarqube_data:/opt/sonarqube/data
+      - sonarqube_extensions:/opt/sonarqube/extensions
+      - sonarqube_logs:/opt/sonarqube/logs
+    depends_on:
+      db:
+        condition: service_healthy
     networks:
       - waste-network
 
@@ -49,6 +73,9 @@ services:
 
 volumes:
   postgres_data:
+  sonarqube_data:
+  sonarqube_extensions:
+  sonarqube_logs:
 
 networks:
   waste-network:

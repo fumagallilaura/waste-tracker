@@ -8,6 +8,8 @@ Sistema inteligente de gestão de desperdício e custos, focado na otimização 
 - [Pré-requisitos](#pré-requisitos)
 - [Como Rodar Localmente](#como-rodar-localmente)
 - [Como Rodar com Docker](#como-rodar-com-docker)
+- [Como Rodar os Testes](#como-rodar-os-testes)
+- [Análise de Qualidade (SonarQube)](#análise-de-qualidade-sonarqube)
 - [Documentação](#documentação)
 - [Troubleshooting](#troubleshooting)
 
@@ -22,6 +24,7 @@ O **Waste Tracker** é uma aplicação desenvolvida para o monitoramento e gest�
 * **Back-end:** Python, FastAPI, Uvicorn, Pydantic, PostgreSQL
 * **Front-end:** Next.js, React, TypeScript, Tailwind CSS, Zustand, TanStack React Query
 * **Infraestrutura:** Docker & Docker Compose
+* **Qualidade de Código & Testes:** SonarQube, Pytest, Pytest-cov
 
 ---
 
@@ -100,6 +103,60 @@ docker compose down
 
 ---
 
+## Como Rodar os Testes
+
+Os testes do back-end utilizam pytest com banco SQLite em memória (:memory:). Para executá-los:
+
+1. Certifique-se de estar com o ambiente virtual ativado na pasta backend:
+```bash
+cd backend
+source venv/Scripts/activate  # ou venv/bin/activate no Linux/macOS
+```
+2. Execute o pytest:
+```bash
+pytest
+```
+
+---
+
+## Análise de Qualidade (SonarQube)
+
+Este projeto utiliza o **SonarQube** para análise estática de código e métricas de qualidade, dividindo os relatórios em dois projetos independentes no painel: **Backend** e **Frontend**.
+
+### Pré-requisitos
+* [Docker](https://www.docker.com/) e Docker Compose instalados e rodando.
+* Python (para execução dos testes e cobertura do backend).
+
+### Como executar a análise
+
+O repositório possui um script automatizado (`analisar.sh`) que sobe o SonarQube, gera o relatório de cobertura de testes do backend e envia as análises separadas de ambas as camadas.
+
+1. Abra o seu terminal (Bash / WSL).
+2. Execute o script de análise:
+   ```bash
+   bash analisar.sh
+   ```
+3. O script irá:
+
+- Subir os containers do SonarQube e do Banco de Dados.
+
+- Aguardar o serviço ficar pronto.
+
+- Gerar o relatório de cobertura do backend (coverage.xml).
+
+- Executar os scanners de forma isolada para o Backend (waste-tracker-backend) e para o Frontend (waste-tracker-frontend).
+
+### Acessando os Resultados
+Após a conclusão do script, acesse o painel web em:
+
+URL: http://localhost:9000
+
+Credenciais padrão (primeiro acesso): admin / S&nh@!123456 (o SonarQube solicitará a alteração da senha no primeiro login).
+
+> Observação: Caso necessário, no primeiro acesso, utilize as credenciais padrão: admin / admin (o sistema pedirá a redefinição da senha) e troque pela senha do script, que é `S&nh@!123456`
+
+---
+
 ## Documentação
 
 Todo o detalhamento técnico, registros de decisão e padrões do projeto estão centralizados na pasta [docs/](./docs). 
@@ -118,4 +175,9 @@ Acesse o [Índice da Documentação](./docs/README.md) para navegar por todos os
 
 ```bash
 docker compose build --no-cache && docker compose up
+```
+
+### 2. Mudança de dependencias no backend
+```bash
+pip freeze > requirements.txt
 ```
